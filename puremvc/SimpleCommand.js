@@ -36,7 +36,7 @@ class SimpleCommand extends Notifier {
      *  The notification to handle.
      * @return {void}
      */
-    execute(notification) {
+    async execute(notification) {
     }
 }
 

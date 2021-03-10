@@ -117,7 +117,7 @@ class View {
      *  The Notification to notify Observers of
      * @return {void}
      */
-    notifyObservers(notification) {
+    async notifyObservers(notification) {
         // SIC
         if (this.observerMap[notification.getName()] != null) {
             var observers_ref = this.observerMap[notification.getName()], observers = [], observer;
@@ -129,7 +129,7 @@ class View {
 
             for (let i = 0; i < observers.length; i++) {
                 observer = observers[i];
-                observer.notifyObserver(notification);
+                await observer.notifyObserver(notification);
             }
         }
     };

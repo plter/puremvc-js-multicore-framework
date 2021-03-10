@@ -344,8 +344,8 @@ class Facade {
      *  The type of the notification
      * @return {void}
      */
-    sendNotification(notificationName, body, type) {
-        this.notifyObservers(new Notification(notificationName, body, type));
+    async sendNotification(notificationName, body, type) {
+        await this.notifyObservers(new Notification(notificationName, body, type));
     };
 
     /**
@@ -361,9 +361,9 @@ class Facade {
      *  The Notification to send
      * @return {void}
      */
-    notifyObservers(notification) {
+    async notifyObservers(notification) {
         if (this.view != null) {
-            this.view.notifyObservers(notification);
+            await this.view.notifyObservers(notification);
         }
     };
 

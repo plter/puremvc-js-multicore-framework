@@ -102,8 +102,8 @@ class Observer {
      *  The Notification to pass to the interested objects notification method
      * @return {void}
      */
-    notifyObserver(notification) {
-        this.getNotifyMethod().call(this.getNotifyContext(), notification);
+    async notifyObserver(notification) {
+        await this.getNotifyMethod().call(this.getNotifyContext(), notification);
     };
 
     /**

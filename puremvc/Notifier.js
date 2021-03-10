@@ -82,10 +82,10 @@ class Notifier {
      *  The notification type
      * @return {void}
      */
-    sendNotification(notificationName, body, type) {
+    async sendNotification(notificationName, body, type) {
         var facade = this.getFacade();
         if (facade) {
-            facade.sendNotification(notificationName, body, type);
+            await facade.sendNotification(notificationName, body, type);
         }
     };
 
