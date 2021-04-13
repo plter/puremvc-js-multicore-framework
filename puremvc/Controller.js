@@ -110,14 +110,14 @@ class Controller {
      * @param {Notification} note
      * @return {void}
      */
-    executeCommand(note) {
+    async executeCommand(note) {
         var commandClassRef = this.commandMap[note.getName()];
         if (commandClassRef == null)
             return;
 
         var commandInstance = new commandClassRef();
         commandInstance.initializeNotifier(this.multitonKey);
-        commandInstance.execute(note);
+        await commandInstance.execute(note);
     }
 
     /**
